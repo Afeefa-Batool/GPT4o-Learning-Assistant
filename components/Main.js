@@ -190,7 +190,7 @@ export default function Main() {
           method: "POST",
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer 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`,
+            'Authorization': `Bearer ${process.env.NEXT_PUBLIC_OPENAIKEY}`,
           },
           body: JSON.stringify({
             model: "gpt-4o",
@@ -243,7 +243,7 @@ export default function Main() {
                 type="button"
                 disabled={!words}
                 onClick={handleSubmit}
-                className={`${words !== 0 ? 'bg-teal-600 dark:bg-teal-800 hover:bg-teal-700 dark:hover:bg-teal-900' : 'bg-neutral-200 dark:bg-neutral-700 text-neutral-400 cursor-not-allowed'} rounded-full px-3 py-1.5 font-bold w-32 flex justify-center`}
+                className={`${words !== 0 ? 'bg-orange-600 text-white dark:bg-orange-400 hover:bg-orange-400 dark:hover:bg-orange-400' : 'bg-neutral-200 dark:bg-neutral-700 text-neutral-400 cursor-not-allowed'} rounded-full px-3 py-1.5 font-bold w-32 flex justify-center`}
               >
                 {!loading ? <span>Fix All Errors</span> : <Loader className="p-0.5 w-6 h-6 text-gray-400 animate-spin dark:text-gray-600 fill-white" />}
               </button>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
-import Logo from '../public/logo.svg'
+import Image from 'next/image'
 import Light from '../public/icons/light.svg'
 import Dark from '../public/icons/dark.svg'
 import { useEffect, useState } from 'react'
@@ -18,10 +18,17 @@ export default function Nav() {
     <div className="w-screen z-50 fixed top-0 bg-white dark:bg-neutral-800 shadow-sm">
         <div className="grid grid-cols-3 justify-between px-4 sm:px-8 py-1.5 sm:py-3 border-b border-b-neutral-300 dark:border-b-neutral-600">
             <div>
-                <Link href={"https://nathanbrodin.com"} passHref={true}>
+                <Link href={""} passHref={true}>
                     <a target="_blank" className='flex items-center'>
-                        <Logo className="h-6 w-6 sm:h-8 sm:w-8 sm:mr-3"/>
-                        <h1 className='self-center hidden sm:block sm:text-xl font-black whitespace-nowrap text-teal-800'>Nathan Brodin</h1>
+                        {/* <Logo className="h-6 w-6 sm:h-8 sm:w-8 sm:mr-3"/> */}
+                        <Image 
+                                src="/images/learning.png" // Replace with your image path
+                                alt="LearnBuddy" 
+                                className="h-6 w-6 sm:h-8 sm:w-8 sm:mr-3 mr-10"
+                                width={60} // Adjust as needed
+                                height={60} // Adjust as needed
+                            />
+                        <h1 className='self-center hidden sm:block sm:text-xl font-black whitespace-nowrap text-teal-800 ml-6'>LearnBuddy</h1>
                     </a>
                 </Link>
             </div>
